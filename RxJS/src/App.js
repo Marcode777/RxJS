@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -10,60 +9,15 @@ class App extends Component {
         {/*<h1>{this.state.headerText}</h1>
         <h2>{this.state.contentText}</h2>*/}
         <h1>LISTify</h1>
-        <Header/>
         <Movies/>
         <Cities/>
-        <Extra/>
-        <Last/>
         <One/>
+        <Clock/>
       </div>
     );
   }
 }
 
-class Header extends React.Component{
-  constructor(props){
-    super(props)
-    this.state = {
-      data: [
-        {
-          "id": 1,
-          "name": "Marco Seven",
-          "age": 33
-        },
-        {
-          "id": 2,
-          "name": "Tom Cruise",
-          "age": 54
-        },
-         {
-          "id": 3,
-          "name": "Brad Pitt",
-          "age": 53
-        }
-      ]
-    };
-  }
-
-  render(){
-    return(
-      <div>
-        <table>
-          <thead>
-            <th>
-              <td>ID</td>
-              <td>NAME</td>
-              <td>AGE</td>
-            </th>
-          </thead>
-          <tbody>
-            {this.state.data.map((person, i)=> <TableRow key={i} data={person} />)}
-          </tbody>
-        </table>
-      </div>
-    )
-  }
-}
 
 class Movies extends React.Component{
   constructor(){
@@ -94,11 +48,11 @@ class Movies extends React.Component{
       <div>
         <table>
           <thead>
-            <th>
-              <td>ID</td>
-              <td>CHARACTER</td>
-              <td>MOVIE</td>
-            </th>
+            <tr>
+            <td><strong>ID</strong></td>
+            <td><strong>CHARACTER</strong></td>
+            <td><strong>MOVIE</strong></td>
+            </tr>
           </thead>
           <tbody>
             {this.state.moviedata.map((person, i)=> <TableRow2 key={i} moviedata={person} />)}
@@ -140,11 +94,11 @@ class Cities extends React.Component{
       <div>
         <table>
           <thead>
-            <th>
-              <td>ID</td>
-              <td>CITY</td>
-              <td>RATING</td>
-            </th>
+            <tr>
+            <td><strong>ID</strong></td>
+            <td><strong>CITY</strong></td>
+            <td><strong>RATING</strong></td>    
+            </tr>
           </thead>
           <tbody>
             {this.state.citydata.map((city, i)=> <CityTable key={i} citydata={city} />)}
@@ -158,17 +112,7 @@ class Cities extends React.Component{
 
 
 
-class TableRow extends React.Component{
-  render(){
-    return(
-    <tr>
-      <td>{this.props.data.id}</td>
-      <td>{this.props.data.name}</td>
-      <td>{this.props.data.age}</td>
-    </tr>
-    )
-  }
-}
+
 
 
 
@@ -196,108 +140,6 @@ class CityTable extends React.Component{
   }
 }
 
-class Extra extends React.Component{
-  constructor(){
-    super()
-    this.state= {
-      data: [
-        {
-          "id": 1,
-          "language": "REACT",
-          "backedby": "FACEBOOK"
-        },
-        {
-          "id": 2,
-          "language": "ANGULAR",
-          "backedby": "GOOGLE"
-        }
-      ]
-    }
-  }
-
-  render(){
-    return(
-      <table>
-        <thead>
-          <th>
-            <td>ID</td>
-            <td>LANGUAGE</td>
-            <td>BACKED BY</td>
-          </th>
-        </thead>
-        <tbody>
-          {this.state.data.map((extra, i) => <ExtraTable key={i} data={extra}/> )}
-        </tbody>
-      </table>
-    );
-  }
-}
-
-class ExtraTable extends React.Component{
-  render(){
-    return(
-      <tr>
-        <td>{this.props.data.id}</td>
-        <td>{this.props.data.language}</td>
-        <td>{this.props.data.backedby}</td>
-      </tr>
-    );
-  }
-}
-
-class Last extends React.Component{
-  constructor(){
-    super()
-    this.state = {
-      data: [
-        {
-          "id":1,
-          "name": "Coding + Family + Love",
-          "passionlevel": "First"
-        },
-        {
-          "id":2,
-          "name": "Trading and Making Money",
-          "passionlevel": "Very Close Second"
-        },
-        {
-          "id":3,
-          "name": "Basketball",
-          "passionlevel": "Third"
-        }
-      ]
-    }
-  }
-
-  render(){
-    return(
-      <table>
-        <thead>
-          <th>
-            <td>ID</td>
-            <td>NAME</td>
-            <td>PASSIONLEVEL</td>
-          </th>
-        </thead>
-        <tbody>
-          {this.state.data.map((data, i) => <LastTable key={i} data={data}/> )}
-        </tbody>
-      </table>
-    );
-  }
-}
-
-class LastTable extends React.Component{
-  render(){
-    return(
-      <tr>
-        <td>{this.props.data.id}</td>
-        <td>{this.props.data.name}</td>
-        <td>{this.props.data.passionlevel}</td>
-      </tr>
-    )
-  }
-}
 
 class One extends React.Component{
   constructor(){
@@ -324,10 +166,10 @@ class One extends React.Component{
     return(
       <table>
         <thead>
-          <th>
-            <td>ID</td>
-            <td>PLACE</td>
-          </th>
+          <tr>
+          <td><strong>ID</strong></td>
+          <td><strong>PLACE</strong></td>
+          </tr>
         </thead>
         <tbody>
          {this.state.data.map((data, i) => <OneTable  key={i} data={data} /> )}
@@ -346,6 +188,38 @@ class OneTable extends React.Component{
           <td>{this.props.data.place}</td>
         </tr>
       </table>
+    );
+  }
+}
+
+class Clock extends React.Component{
+  constructor(){
+    super()
+    this.state = { 
+      date: new Date()
+    };
+  }
+
+  componentDidMount(){
+    this.timeID= setInterval(
+    () => {this.tick()}, 1000)
+  }
+
+  tick(){
+    this.setState({
+      date: new Date()
+    });
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.timeID)
+  }
+
+  render(){
+    return(
+      <div>
+        <h3>The Time Current Time Is: {this.state.date.toLocaleTimeString()}</h3>
+      </div>
     );
   }
 }

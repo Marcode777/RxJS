@@ -27,8 +27,8 @@ componentWillUnmount(){
   render(){
     return(
       <div>
-        <h3>CLOCK</h3>
-        <h3>{this.state.date.toLocaleString()} </h3>
+        
+        <h3>CLOCK:{this.state.date.toLocaleString()} </h3>
       </div>
       );
   }

@@ -2,20 +2,34 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
+  constructor(){
+    super()
+    this.state = {
+      statetoprops: "this is statetoprops data, data coming from the main state",
+      extradata: "this is also actual extradata coming from the main state"
+    }
+  }
+
 
   render() {
     return (
       <div className="App">         
         {/*<h1>{this.state.headerText}</h1>
         <h2>{this.state.contentText}</h2>*/}
+
         <h1>LISTify</h1>
-        <Movies/>
+        <Movies statetoprops={this.state.statetoprops} extradata={this.state.extradata}/>
         <Cities/>
         <One/>
         <Clock/>
+        
       </div>
     );
   }
+}
+
+App.defaultProps={
+  header: "default props for the header..."
 }
 
 
@@ -46,6 +60,8 @@ class Movies extends React.Component{
  render(){
     return(
       <div>
+       <h3>{this.props.statetoprops}</h3>
+       <h3>{this.props.extradata}</h3>
         <table>
           <thead>
             <tr>
@@ -223,6 +239,11 @@ class Clock extends React.Component{
     );
   }
 }
+
+
+
+
+
 
 export default App;
 

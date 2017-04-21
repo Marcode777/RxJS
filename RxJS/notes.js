@@ -61,6 +61,26 @@
 //    if there are any errors or data missing for the "isRequired" data, it will display on the console
 
 // components API
+// remember,we will ultimately pass in a function in the render, because remember that anywhere in React, you cannot update the state in the render function
+// also, remember, that since the 0.14 version of React, due to ES6 implementation, when you try to use a function, you have to bind it to a particular class; otherwise when the "this" syntax is accessed, it will return a state of null because nothing is bound to the class; this is why we need to use bind with functions
+// we always bind to the class in the constructor because we are using the ES6 version
+// learned 3 things in components api so far: 1. how to call a function from a button using onClick in the render method, 2. how to bind class constructors or class parameters using the bind keyword in the constructor, 3. how to setState, which means we can set any number of states and it will get updated and we can append if we want
+// note that we can update the state, only when the components are not rendering, so make sure that we abide by this rule, because for example if we try to setState in the render, it will throw an error saying setState cannot be updated during a state transition. So let's make sure that we do not setState during any state transition.
+// force update: in some cases we need to force update as in the case of when he have to use a random number, where a Math.random() function is required. This is because the random number will not get updated by itself. There has to be some action or a component or a value that changes in the state that triggers it, if we want to update a component by itself, or without anything getting updated but we want to do it based on our requirements. What we can do is we can tie a function to this random button number, and that will force update the component. So now, when we click the random number button, the random number gets updated, and the power of React is such that the entire page does not need to be re-rendered, but only that particular component. We can also force update any component that we wish to, however, this must be seldom used and used carefully and with caution because if we keep on updating force update in a loop, this means that component will continuously keep on updating, and this can affect performance very much. 
+// findDOMNode: this function or method will help us find anything in our DOM and manipulate it. So how do we find it in the React tree? The way we do it is, we have already created the function, the next step is to bind that function, as with the other functions in the constructor. Then import ReactDOM from 'react-dom'; so with this, we can use a function or a method from the react-dom library to find the node. We can do this by defining the following into the findMyDOMNode(){} function as findMyDOMNode(){var myDiv = document.getElementById('myDiv');}   So this will give us the element in JavaScript. Now that we have found the div, all we have to do is make the changes that we want or play around with it by doing something like the following: ReactDOM.findDOMNode(myDiv).style.color = 'red'; This way, we can find any of the DOM Nodes and we can update or play with them just like we do in plain JavaScript. So this is how we can use the React DOM, which is the virtual DOM, and update the contents that can be represented onto the user screen.
+// as a review, we learned 3 things here: setState, force update and findDOMNode.
+
+// component life cycles. 
+// There are 7 of them, and they are: componentWillMount, componentDidMount, componentWillReceiveProps, shouldComponentUpdate, componentWillUpdate, componentDidUpdate, and componentWillUnmount
+// componentWillMount(){} is executed before rendering on both the server and the client
+// componentDidMount(){} is executed after the first render, only on the client side, this is where we can put in all of our AJAX requests and our DOM or state updates that should occur. This method is used for integration with JavaScript frameworks and any functions with delayed execution like setTimeOut and setInterval
+// componentWillReceiveProps(){} is invoked as soon as the props are updated, it's when it's just about to receive props from the parent, before another render is called. This means that whenever there is an update in our properties, which means the parent changes the content or the content that is passed to the child, the componentWillReceiveProps is invoked. Now, keep in mind that componentWillReceiveProps(){} also receives the new set of props, so we have to make sure that we also pass in the new props as in, componentWillReceiveProps(newProps){}, otherwise, it will cause an arror.
+// shouldComponentUpdate(){} should return true or false, this will determine if the component will be updated or not updated, this is set to true by default, but if we're sure that the component does not need to update after the state or the props are updated, we can manually pass in a false and return false. This takes in two parameters, newProps and nextState, as in, shouldComponentUpdate(newProps, nextState){}
+// componentWillUpdate(){}, means it's about to be rendered. *A quick clarification is that componentWillMount(){} is for when it's about to be invoked, when rendering is about to be invoked; and componentWillUpdate(){} is for when it's about to be rendered (or just before rendering).* And again, just like componentShouldUpdate(){}, it also expects a newProps and nextState, as in componentWillUpdate(newProps, nextState){}
+// componentDidUpdate(){}, in comparison to componentWillUpdate(){}, componentDidUpdate(){}, means it's just after rendering. The two immediately previous lifecycle methods ensure we have control just before and just after rendering happens.
+// componentWillUnmount(){}, this is the last one, just like componentWillMount(){} where we get to know when the rendering happens, similarly we need to also know when the component unmounts. This does not accept any parameters. We can't immediately see the unmount, unless we close the application or manually unmount the component. A way we can unmount the component is by placing a setTimeout function over the original index.js such as by placing setTimeout(()=> {ReactDOM.unmountComponentAtNode(document.getElemenyById("root"));}, 5000)
+
+//
 
 
 
@@ -71,4 +91,12 @@
 
 
 
-// left off at completion of Understanding Props, section 3, lecture 12
+
+
+
+
+
+
+
+
+

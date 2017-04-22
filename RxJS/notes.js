@@ -80,6 +80,13 @@
 // componentDidUpdate(){}, in comparison to componentWillUpdate(){}, componentDidUpdate(){}, means it's just after rendering. The two immediately previous lifecycle methods ensure we have control just before and just after rendering happens.
 // componentWillUnmount(){}, this is the last one, just like componentWillMount(){} where we get to know when the rendering happens, similarly we need to also know when the component unmounts. This does not accept any parameters. We can't immediately see the unmount, unless we close the application or manually unmount the component. A way we can unmount the component is by placing a setTimeout function over the original index.js such as by placing setTimeout(()=> {ReactDOM.unmountComponentAtNode(document.getElemenyById("root"));}, 5000)
 
+// react forms.
+// left off at 3:17
+//
+//
+//
+//
+//
 //
 
 

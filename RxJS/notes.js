@@ -81,9 +81,9 @@
 // componentWillUnmount(){}, this is the last one, just like componentWillMount(){} where we get to know when the rendering happens, similarly we need to also know when the component unmounts. This does not accept any parameters. We can't immediately see the unmount, unless we close the application or manually unmount the component. A way we can unmount the component is by placing a setTimeout function over the original index.js such as by placing setTimeout(()=> {ReactDOM.unmountComponentAtNode(document.getElemenyById("root"));}, 5000)
 
 // react forms.
-// left off at 3:17
-//
-//
+// first summary at 06:38; first we create a state variable for it, which is our myInputValue, this variable is where store our inputValue, we bound this to the value of the input field, so wherever we have the value, instead of the value, we give the state variable, then, on change of this input, we handle a function, this.myInputChanged(){}, and this function of course is bound as well in the contructor, and in this function, we setState it to the new value by accessing the event.target.value
+// what if the input field is in a child component? How can we make updates to the parent so that the contents get updated- which means the <h4> is in the parent and the input field is in the child. So we create a child component for it called myInputComponent. All this component does is have an input. What we can do is pass this as a property from the myInputComponent, as, inputValue={this.state.myInputValue}. Now we can use the inputValue field as a prop passed onto the child where the input value field is, as value={this.props.inputValue}. We then add the onChange as a props as well with the child as, onChange={this.props.myInputChanged}. And on change of this, it will call the parent's myInputChanged, and it in turn, will call the original myInputChanged.  
+// So to review above, in the first summary, this is an example of how you can move the fields into separate components and reuse it from one parent component. So let's say we have a master form or for example a contacts page, with first name, middle name, last name and so on and so forth, we can end up creating different components for them and ultimately join them together. So that was a very basic example of how inputs work. We have still to use them in form, which will be covered next.
 //
 //
 //

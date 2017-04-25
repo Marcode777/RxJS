@@ -81,13 +81,35 @@
 // componentWillUnmount(){}, this is the last one, just like componentWillMount(){} where we get to know when the rendering happens, similarly we need to also know when the component unmounts. This does not accept any parameters. We can't immediately see the unmount, unless we close the application or manually unmount the component. A way we can unmount the component is by placing a setTimeout function over the original index.js such as by placing setTimeout(()=> {ReactDOM.unmountComponentAtNode(document.getElemenyById("root"));}, 5000)
 
 // react forms.
+// Instead of having it display what we already have in-state, what if we wanted what the user inputs to display? We do that by passing an event. (e) As in, myInputChanged(e){} and e.target.value   Because whenever we pass in an event, we can access it. We store it in a variable called itemValue and place this variable with the key in the key:value pair state, so instead of myInputValue: "Input Changed", we have, myInputValue: itemValue
 // first summary at 06:38; first we create a state variable for it, which is our myInputValue, this variable is where store our inputValue, we bound this to the value of the input field, so wherever we have the value, instead of the value, we give the state variable, then, on change of this input, we handle a function, this.myInputChanged(){}, and this function of course is bound as well in the contructor, and in this function, we setState it to the new value by accessing the event.target.value
 // what if the input field is in a child component? How can we make updates to the parent so that the contents get updated- which means the <h4> is in the parent and the input field is in the child. So we create a child component for it called myInputComponent. All this component does is have an input. What we can do is pass this as a property from the myInputComponent, as, inputValue={this.state.myInputValue}. Now we can use the inputValue field as a prop passed onto the child where the input value field is, as value={this.props.inputValue}. We then add the onChange as a props as well with the child as, onChange={this.props.myInputChanged}. And on change of this, it will call the parent's myInputChanged, and it in turn, will call the original myInputChanged.  
 // So to review above, in the first summary, this is an example of how we can move the fields into separate components and reuse them from one parent component. So let's say we have a master form, or for example a contacts page, with first name, middle name, last name and so on and so forth, we can end up creating different components for them and ultimately join them together. So that was a very basic example of how inputs work. We have still to use them in form, which will be covered next.
-//
-//
-//
-//
+// * quick note to self: when passing inputValue={this.state.inputValue} from MyInputComponent down as a prop to its input, if I do <input value={this.props.inputValue} onChange={this.props.onChange}/>, it will actually work just like the top component input, just adding onto the state. But if I do <input value={this.props.myInputValue} onChange={this.props.onChange}/>, it will work as intended, and instead of adding onto the state, it will reset the whole state with the new input, as intended.
+// next is how to use inputs in a form
+// left off at forms in react part 2, section 3, lecture 17 at 03:23
+// next is a form with two inputs
+// for example, a form where one input is a checkbox and the other input is a number field; and then how to handle or operate when there is a change in one of the two, so that the values always get updated; and then when we submit the form, we can see what the values are going to be
+// so we make a ReservationFormComponent, so let's say we want to invite someone to a party, and we have to check if someone is going and the number of guests that they're bringing in.
+// left off at forms in react part 3 section 3, lecture 18 at 03:33
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

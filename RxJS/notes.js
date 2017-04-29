@@ -92,7 +92,7 @@
 // for example, a form where one input is a checkbox and the other input is a number field; and then how to handle or operate when there is a change in one of the two, so that the values always get updated; and then when we submit the form, we can see what the values are going to be
 // so we make a ReservationFormComponent, so let's say we want to invite someone to a party, and we have to check if someone is going and the number of guests that they're bringing in.
 // left off at forms part 3 section 3, lecture 18 at 05:20
-// very important to go over the concepts from 05:20 - 06:18     "const value = target.type == "checkbox" ? target.checked : target.value;"   This will give us the value of the particular input that has changed, either the checkbox or the particular input field.
+// very important to go over the concepts from 05:20 - 06:18   "const target = e.target" and "const value = target.type == "checkbox" ? target.checked : target.value;"   This will give us the value of the particular input that has changed, either the checkbox or the particular input field; "const target = e.target" for the input field and "const value = target.type == "checkbox" ? target.checked : target.value" for the checkbox
 // So, this is a very good example where we have multiple input fields, which in this case are a checkbox and an input, on a form, and we need to make sure the input changes are correctly updated in the state. With this being said, we can create these as separate components. We can reuse this ReservationComponent anywhere on our website!
 // I WILL BE SURE TO REVIEW THIS VERY WELL. finished at 10:31
 

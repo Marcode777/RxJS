@@ -171,7 +171,7 @@ class ReservationFormComponent extends React.Component{
 
   handleInputChange(e){
     const target = e.target;
-    const value = target.type == "checkbox" ? target.checked : target.value;
+    const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
     console.log(name, value);
     this.setState({
@@ -180,7 +180,7 @@ class ReservationFormComponent extends React.Component{
   }
 
   handleSubmit(e){
-    alert("I will be going with:" + this.state.isGoing + ", with the following number of guests: " + this.state.numberOfGuests);
+    alert("I will be going with:" + this.state.isGoing + ", with: " + this.state.numberOfGuests + "guests");
     e.preventDefault();
   }
 

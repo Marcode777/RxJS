@@ -115,8 +115,16 @@
 // so the way that we can add a route to a parent route is definitely by adding another indentation, as in <Route parent> <Route child blogsingle></Route> </Route>   and for the route path, the way we define a parameter or like a small number or like a dynamic id that we can pass in as part of the url is with a colon, as in Route path="/blog/:123" and then postId, which is the name of the parameter if we want to use an id, because that's what will be available to us if we want to use that id in fecthing some data later on.
 // now we copy three of the links from index.js, not 4, but 3, because the 4th link would just be the same page we're currently on, and then put them into blog, and then we give their paths the id's such "/blog/123" "/blog/456" "/blog/789" and when clicking on them, the url address bar should display them, this means they're working. Now, if we also want to display the Blog Single content, we use {this.props.children}, and it should start displaying Blog Single's content, because it is a child component of the blog.js file, which we did for their routing in the index.js file.
 // in summary, we started from home, then we moved on to creating links for different paths on our webpage, and then we ended up having child components. Of course, we can also dynamically create content too, which means we can also fetch data from a data base, all we have to do is fetch the id from the url as in, /blog/whateverdatabaseidhere, which then will allow us to fetch its contents. This is how we can create our own blog. Completed ReactRouterPart2 Section3 Lecture 20
+// in Section 3 Lecture 21, [new] section about installing new react router 4.0. We go over the solution as to why react-router was not working properly ( I already know that my solution was to change the package.json from loading version 4.0.0 to version 3.0.0) Just like we have npm as a package manager, yarn is the other package manager that we have access to. We can install react-router using yarn or npm either way. 
+//*The new part is that when we install react-router, we have to do it as npm install react-router-dom --save  now.* We used to import by doing import {Router, Route, Link, hashHistory} from 'react-router'    now we import it this way     import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
+// we copy the syntax to implement it from the react-router documentation, and afterwrds, we can also add the <App/> component to the index.js
 
 
+
+
+// OVERVIEW
+// We are going to build a game built on ReactJS.
+// This game will ask the user for the sum of two numbers. The user will then be given a collection of choices. If the user selects the correct answer, the user will get a success screen. If the user selects the wrong answer, they will get a "wrong" screen and it will ask the user to play again. When they play again, they will be presented with a new question with a new set of numbers.
 
 
 

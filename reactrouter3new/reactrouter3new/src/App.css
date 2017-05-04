@@ -1,0 +1,61 @@
+.App {
+  text-align: center;
+  height: 333px;
+  background-image: url("https://4.bp.blogspot.com/-3aBTdvTvgqM/VNcb2gxRaTI/AAAAAAABccs/PPbDPAL-6Bo/s0/Bitcoin_UHD.jpg");
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.homeimage {
+  padding-top:50px;height:500px;color: black; background-color: white; background-image: url("https://images.pexels.com/photos/1440/city-road-street-buildings.jpg?w=940&h=650&auto=compress&cs=tinysrgb"); border: 2px solid gray; border-radius: 5px
+}
+
+.homeheader {
+  color: white;
+}
+
+
+
+.aboutimage{
+  padding-top:50px;height:500px;color: black; background-color: white; background-image: url("https://images.pexels.com/photos/243140/pexels-photo-243140.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"); border: 2px solid gray; border-radius: 5px
+}
+
+.aboutheader{
+  color: white;
+}
+
+.contactimage{
+  padding-top:50px;height:500px;color: black; background-color: white; background-image: url("https://images.pexels.com/photos/4831/hands-coffee-smartphone-technology.jpg?w=940&h=650&auto=compress&cs=tinysrgb"); border: 2px solid gray; border-radius: 5px
+}
+
+.contactheader{
+  color:white;
+}
+
+
+.blogimage{
+  padding-top:50px;height:500px;color: black; background-color: white; background-image: url("https://images.pexels.com/photos/34601/pexels-photo.jpg?w=940&h=650&auto=compress&cs=tinysrgb"); border: 2px solid gray; border-radius: 5px
+}
+
+.blogheader{
+  color:white;
+}

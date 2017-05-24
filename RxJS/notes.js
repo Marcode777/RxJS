@@ -143,8 +143,14 @@
 
 
 // Section 5 Lecture 31, Easy A B C, 
-
-
+// Designed for 3 purposes, 1. it's easy 2. already did SumGame, so we can use some of the components here 3. it's for learning and doing the work
+// We'll have one section for letters, another for images and another for spelling.
+// The moment we click "next" a recorded sound is played. The sound was recorded with an iPhone using voice memos. Then the file was moved onto the laptop and uses a service called Audacity, and trimmed them into separate small files, and these files are hosted on a third party client. Similarly, the images are images with the background of transparent, which means they do not have any background, so it's easy and it appears to be a part of the game. All of these images are from the internet as well. And they are uploaded to Imdior, Imdior is a free site that lets us store all our images as a post, and of course we can use the URLs to display on our website. Of course we merged all of that into a small JSON file, that is the data file that we have. 
+// The JSON file has a key:value-pairs such for every single letter of the aphabet. These properties, for example are "letter": "A", "image": "http:whateverurladdress", etc. Of course these will be 26 objects, for the 26 letters of the alphabet, which means that we have an array. So this is the alphabet JSON.
+// Also the App.css is also shared. In summary, these are the two shared files: the alphabet JSON and the App.css file.
+// Section 5 Lecture 32
+// Section 5 Lecture 33 left off at 8:51
+// Section 5 Lecture 34 left off at 1:13
 
 
 

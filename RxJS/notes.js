@@ -150,7 +150,7 @@
 // Also the App.css is also shared. In summary, these are the two shared files: the alphabet JSON and the App.css file.
 // Section 5 Lecture 32
 // Section 5 Lecture 33 left off at 8:51
-// Section 5 Lecture 34 left off at 1:13
+// Section 5 Lecture 34 left off at 7:43
 
 
 

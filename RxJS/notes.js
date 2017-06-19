@@ -151,7 +151,7 @@
 // Section 5 Lecture 32
 // Section 5 Lecture 33 left off at 8:51
 // Section 5 Lecture 34 left off at 7:43
-// Section 5 Lecture 35 left off at 1:37
+// Section 5 Lecture 35 left off at 4:43
 
 
 
